@@ -1,14 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @alien.name %>
-</p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @alien.age %>
-</p>
 
-<%= link_to 'Edit', edit_alien_path(@alien) %> |
-<%= link_to 'Back', aliens_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Planet</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @alien.name %></td>
+        <td><%= @alien.age %></td>
+        <td><%= @alien.try(:planet).try(:name) %></td>
+      </tr>
+  </tbody>
+</table>
+
+<div class="menuBack">
+  <%= link_to 'Edit', edit_alien_path(@alien) %>
+  <%= link_to 'Back', aliens_path %>
+</div>
