@@ -15,7 +15,7 @@
   
 
   <div class="field">
-    <%= form.label :planet %>
+    <%= form.label :Planeta %>
     <%= form.select :planet_id, Planet.all.map { |index| [index.name.to_s, index.id]},
     {include_blank: 'Selecione o Planeta'},
     { class: "form-control", required: true } %>
@@ -25,17 +25,17 @@
 
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :Nome %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :age %>
+    <%= form.label :Idade %>
     <%= form.number_field :age %>
   </div>
 
   <div class="field">
-  <%= form.label :powers %>
+  <%= form.label :Poderes %>
   <%= collection_check_boxes(:alien, :power_ids, Power.all, :id, :name) %>
 </div>
 

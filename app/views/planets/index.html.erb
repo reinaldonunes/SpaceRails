@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Planets</h1>
+<h1>Planetas</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nome</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,8 +15,8 @@
       <tr>
         <td><%= planet.name %></td>
         <td><%= link_to 'Show', planet %></td>
-        <td><%= link_to 'Edit', edit_planet_path(planet) %></td>
-        <td><%= link_to 'Destroy', planet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_planet_path(planet) %></td>
+        <td><%= link_to 'Deletar', planet, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Planet', new_planet_path %>
+<%= link_to 'Novo Planeta', new_planet_path %>
