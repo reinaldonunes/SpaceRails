@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_02_141853) do
+ActiveRecord::Schema.define(version: 2021_12_02_170037) do
 
   create_table "aliens", force: :cascade do |t|
     t.string "name"
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "planet_id"
+    t.integer "power_id"
+    t.index ["planet_id"], name: "index_aliens_on_planet_id"
+    t.index ["power_id"], name: "index_aliens_on_power_id"
   end
 
   create_table "planets", force: :cascade do |t|
@@ -31,4 +35,6 @@ ActiveRecord::Schema.define(version: 2021_12_02_141853) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "aliens", "planets"
+  add_foreign_key "aliens", "powers"
 end

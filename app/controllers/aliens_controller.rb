@@ -36,6 +36,7 @@ class AliensController < ApplicationController
 
   # PATCH/PUT /aliens/1 or /aliens/1.json
   def update
+    puts params
     respond_to do |format|
       if @alien.update(alien_params)
         format.html { redirect_to @alien, notice: "Alien was successfully updated." }
@@ -64,6 +65,6 @@ class AliensController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def alien_params
-      params.require(:alien).permit(:name, :age)
+      params.require(:alien).permit(:name, :age, :planet_id, :power_id)
     end
 end

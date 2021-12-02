@@ -11,6 +11,24 @@
     </div>
   <% end %>
 
+        
+  
+
+  <div class="field">
+    <%= form.label :planet %>
+    <%= form.select :planet_id, Planet.all.map { |index| [index.name.to_s, index.id]},
+    {include_blank: 'Selecione o Planeta'},
+    { class: "form-control", required: true } %>
+  </div>
+
+  <div class="field">
+  <%= form.label :power %>
+  <%= form.select :power_id, Power.all.map { |index| [index.name.to_s, index.id]},
+  {include_blank: 'Selecione o Poder'},
+  { class: "form-control", required: true } %>
+</div>
+
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
