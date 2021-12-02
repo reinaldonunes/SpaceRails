@@ -21,12 +21,7 @@
     { class: "form-control", required: true } %>
   </div>
 
-  <div class="field">
-  <%= form.label :power %>
-  <%= form.select :power_id, Power.all.map { |index| [index.name.to_s, index.id]},
-  {include_blank: 'Selecione o Poder'},
-  { class: "form-control", required: true } %>
-</div>
+
 
 
   <div class="field">
@@ -38,6 +33,11 @@
     <%= form.label :age %>
     <%= form.number_field :age %>
   </div>
+
+  <div class="field">
+  <%= form.label :powers %>
+  <%= collection_check_boxes(:alien, :power_ids, Power.all, :id, :name) %>
+</div>
 
   <div class="actions">
     <%= form.submit %>

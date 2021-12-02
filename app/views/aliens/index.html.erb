@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Age</th>
+      <th>Planet</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= alien.name %></td>
         <td><%= alien.age %></td>
+        <td><%= alien.try(:planet).try(:name) %></td>
         <td><%= link_to 'Show', alien %></td>
         <td><%= link_to 'Edit', edit_alien_path(alien) %></td>
         <td><%= link_to 'Destroy', alien, method: :delete, data: { confirm: 'Are you sure?' } %></td>
